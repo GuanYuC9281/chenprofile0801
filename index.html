@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>個人形象網站</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- 語言切換下拉選單 -->
+  <header class="language-bar">
+    <div class="language-dropdown">
+      <label for="language-select">Language:</label>
+      <select id="language-select" onchange="switchLanguage(this.value)">
+        <option value="zh-Hant">繁體中文</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- 導覽列 -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#hello" data-key="menu-home">首頁</a></li>
+      <li><a href="#about" data-key="menu-about">關於我</a></li>
+      <li><a href="#education" data-key="menu-edu">學歷</a></li>
+      <li><a href="#workexperience" data-key="menu-exp">經歷</a></li>
+      <li><a href="#certificates" data-key="menu-cert">證照</a></li>
+      <li><a href="#portfolio" data-key="menu-portfolio">作品</a></li>
+      <li><a href="#future" data-key="menu-future">展望</a></li>
+      <li><a href="#contact" data-key="menu-contact">聯絡</a></li>
+    </ul>
+  </nav>
+
+  <!-- 這裡插入原始 HTML 區塊內容 -->
+  <!-- 直接使用你之前貼的 HTML 區塊，包括 hero, about, education, workexperience, portfolio 等 -->
+  <!-- 如有需求我可幫你逐一替換每個 section 的標題與內容支援 data-key -->
+
+  <!-- 這裡略過避免重貼超長，但已整合在處理中（會保留你提供的全部內容） -->
+<!--首頁-->
+  <section id="hello" class="hero">
+  <h1 class="glow" data-key="hero-title">"勇於挑戰，成就卓越"</h1>
+  <h2 data-key="hero-subtitle">您好~我是陳冠宇，歡迎來到我的個人形象網站</h2>
+  <p data-key="hero-desc">專注於網頁前端開發、AI技術、數據分析與ESG永續經營理念</p>
+</section>
+<section class="hero">
+  <h3 data-key="hero-scroll">下滑了解更多</h3>
+</section>
+
+<!--關於我-->
+<section id="about" class="hero">
+  <h2 data-key="about-title">關於我</h2>
+  <h3 data-key="about-subtitle">我是陳冠宇，目前就讀於中國文化大學資訊管理學系</h3>
+  
+  <div class="about-container">
+    <div class="profile-container">
+      <div class="image-slider">
+        <img id="profile-img" src="images/4 (2).jpg" alt="Profile Image">
+      </div>
+    </div>
+
+    <div class="additional-content">
+      <ul><li data-key="about-skill">Skill & Experience</li></ul>
+      <ul>
+        <li data-key="about-fe">前端開發：具有 2~3 年的開發與專案經驗，熟悉 ASP.NET MVC、C#、JavaScript、MS SQL 等技術。</li>
+        <li data-key="about-ai">AI 技術：目前為 Berry AI 團隊的 AI 標註師，負責圖像處理與機器學習統計等相關專案。</li>
+        <li data-key="about-esg">ESG 技術：修習 ESG 導論並獨立完成 ESG 報告書。</li>
+        <li data-key="about-personality">個性：樂觀冷靜，具換位思考與解決問題能力，熱愛挑戰與學習，能自主學習與團隊合作。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!--學歷-->
+<section id="education" class="timeline-section">
+  <h2 data-key="edu-title">學歷</h2>
+  <div class="timeline">
+    
+    <div class="timeline-item">
+      <div class="timeline-date">2018 - 2021</div>
+      <div class="timeline-content">
+        <h3 data-key="edu1-title">淡江高中</h3>
+        <p data-key="edu1-desc">第一屆人文社會班，落實多元學習及校外參訪活動。</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2021 - 2025</div>
+      <div class="timeline-content">
+        <h3 data-key="edu2-title">中國文化大學 資訊管理學系</h3>
+        <p data-key="edu2-desc">主修系統分析、前端開發、AI 技術應用、企業管理等。</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2025 - 至今</div>
+      <div class="timeline-content">
+        <h3 data-key="edu3-title">中國文化大學 資管所（預定）</h3>
+        <p data-key="edu3-desc">計畫進修研究所，深入研究人工智慧與資安技術。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--經歷-->
+<section id="workexperience" class="hero">
+  <h2 data-key="exp-title">工作經驗</h2>
+  <div class="timeline">
+
+    <!-- Rainbow -->
+    <div class="timeline-item">
+      <div class="timeline-image">
+        <img src="images/rainbow.png" alt="測試工程師-實習生">
+      </div>
+      <div class="timeline-content">
+        <h3 data-key="exp1-company">公司名稱: 馬紹爾群島商彩虹科技股份有限公司</h3>
+        <h3 data-key="exp1-role">測試工程師-實習生</h3>
+        <span class="date">2025/2 ~ 2025/8</span>
+        <p data-key="exp1-desc">實習內容主要處理公司遊戲產品前後台新功能測試、回歸測試、黑盒/白盒測試、撰寫測試用例、參與測試需求會議。</p>
+      </div>
+    </div>
+
+    <!-- Berry-AI -->
+    <div class="timeline-item reverse">
+      <div class="timeline-image">
+        <img src="images/berryai.png" alt="AI 標註師">
+      </div>
+      <div class="timeline-content">
+        <h3 data-key="exp2-company">公司名稱: Berry-AI</h3>
+        <h3 data-key="exp2-role">AI 標註師</h3>
+        <span class="date">2024/8 ~ 2024/12</span>
+        <p data-key="exp2-desc">負責影像處理與機器學習統計,協助標註影像。</p>
+      </div>
+    </div>
+
+    <!-- Gogoro -->
+    <div class="timeline-item">
+      <div class="timeline-image">
+        <img src="images/gogoro.png" alt="Gogoro門市助理">
+      </div>
+      <div class="timeline-content">
+        <h3 data-key="exp3-company">公司名稱: Gogoro 睿能創意</h3>
+        <h3 data-key="exp3-role">Gogoro門市助理</h3>
+        <span class="date">2023/7 ~ 2024/3</span>
+        <p data-key="exp3-desc">顧客服務與門市管理，協助產品銷售及交車。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--證照-->
+
+<section id="certificates" class="hero">
+  <h2 data-key="cert-title">證照</h2>
+  <div class="image-container">
+    <div class="image-item">
+      <img src="./images/ERP-GP.jpg" alt="ERP">
+      <figcaption data-key="cert1">ERP軟體應用師</figcaption>
+    </div>
+    <div class="image-item">
+      <img src="./images/ITS.jpg" alt="ITS">
+      <figcaption data-key="cert2">ITS資通安全核心能力</figcaption>
+    </div>
+    <div class="image-item">
+      <img src="./images/CISCO CCST.jpg" alt="CISCO CCST">
+      <figcaption data-key="cert3">CISCO CCST</figcaption>
+    </div>
+  </div>
+</section>
+
+<!--作品-->
+<section id="portfolio">
+  <h2 data-key="portfolio-title">作品展示</h2>
+
+  <!-- 第一個作品：AI 搜sogood存好股 -->
+  <div class="project">
+    <div class="project-image">
+      <img src="images/sogood.png" alt="搜sogood存好股">
+    </div>
+    <div class="project-content">
+      <h3 data-key="proj1-title">📌 專題作品：搜sogood存好股 (2023/9 ~ 2024/11)</h3>
+      <p data-key="proj1-desc">我擔任專題「文案撰寫」與「前端網頁程式架構設計」，完成 MVC 撰寫與網站功能開發。</p>
+      <ul data-key="proj1-points">
+        <li>✅ 開發討論區功能，加入商品資訊與動態導航</li>
+        <li>✅ 建立個人化推薦系統，提升用戶轉化</li>
+        <li>✅ 網站設計流暢，提升 UX</li>
+        <li>✅ 優化核心架構，加速響應速度</li>
+      </ul>
+      <a href="https://sogood.works" target="_blank" class="btn" data-key="proj1-link">🔗 網站連結</a>
+      <a href="https://www.youtube.com/watch?v=GUaKKLdPOrs" target="_blank" class="btn youtube-button" data-key="proj1-video">▶️ 觀看影片</a>
+    </div>
+  </div>
+
+  <!-- 第二個作品：ESG 報告書 -->
+  <div class="project">
+    <div class="project-image">
+      <img src="images/ESG_report.png" alt="ESG 報告書">
+    </div>
+    <div class="project-content">
+      <h3 data-key="proj2-title">📌 ESG 簡易報告書 - ( 自製版本 )</h3>
+      <p data-key="proj2-desc">一份簡易版 ESG 報告書，適用於企業永續發展規劃。</p>
+    </div>
+  </div>
+
+  <!-- 第三個作品：Coming Soon -->
+  <div class="project">
+    <div class="project-image">
+      <img src="images/coming_soon.webp" alt="開發中">
+    </div>
+    <div class="project-content">
+      <h3 data-key="proj3-title">📌 新作品：敬請期待</h3>
+      <p data-key="proj3-desc">正在開發全新專案，敬請期待！</p>
+    </div>
+  </div>
+</section>
+
+<!--未來展望-->
+<section id="future" class="hero">
+  <h2 data-key="future-title">未來展望</h2>
+  <div class="timeline">
+
+    <!-- 每個區塊皆已保留，僅範例列出第一項 -->
+    <div class="timeline-item">
+      <div class="timeline-image">
+        <img src="images/cybersecurity.png" alt="資安發展">
+      </div>
+      <div class="timeline-content card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3 data-key="future1-title">資安發展</h3>
+          </div>
+          <div class="card-back">
+            <p data-key="future1-desc">學習滲透測試、網路安全管理，熟悉資安工具 (如 Wireshark、Kali Linux)，確保軟體系統安全。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-image">
+        <img src="images/cybersecurity.png" alt="AI 自動化">
+      </div>
+      <div class="timeline-content card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3 data-key="future2-title">AI 自動化</h3>
+          </div>
+          <div class="card-back">
+            <p data-key="future2-desc">探索 AI 在測試與數據分析中的應用，學習 RPA 技術。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-image">
+        <img src="images/cybersecurity.png" alt="軟體測試">
+      </div>
+      <div class="timeline-content card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3 data-key="future3-title">軟體測試</h3>
+          </div>
+          <div class="card-back">
+            <p data-key="future3-desc">學習測試自動化框架與壓力測試、功能測試等技巧。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-image">
+        <img src="images/cybersecurity.png" alt="Python 語言">
+      </div>
+      <div class="timeline-content card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3 data-key="future4-title">Python 語言</h3>
+          </div>
+          <div class="card-back">
+            <p data-key="future4-desc">深入掌握 Python 與後端框架（Flask/Django）、數據分析與模型開發。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="timeline-item">
+      <div class="timeline-image">
+        <img src="images/cybersecurity.png" alt="ESG 永續經營">
+      </div>
+      <div class="timeline-content card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3 data-key="future5-title">ESG 永續經營</h3>
+          </div>
+          <div class="card-back">
+            <p data-key="future5-desc">學習 ESG 概念與企業應用，支持永續轉型。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="timeline-item">
+      <div class="timeline-image">
+        <img src="images/cybersecurity.png" alt="商業經營">
+      </div>
+      <div class="timeline-content card">
+        <div class="card-inner">
+          <div class="card-front">
+            <h3 data-key="future6-title">商業經營</h3>
+          </div>
+          <div class="card-back">
+            <p data-key="future6-desc">學習商業策略與數據驅動決策，結合科技與創新。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其餘請依同樣方式加入 data-key，如 future2-title, future2-desc... -->
+    
+  </div>
+</section>
+ 
+<!--聯絡方式-->
+<section id="contact">
+  <h2 data-key="contact-title">聯絡方式</h2>
+  <p class="calligraphy" data-key="contact-desc">連結創新，共創未來，任何合作機會，歡迎聯絡！</p>
+  <div class="social-media">
+    <a href="https://www.facebook.com/profile.php?id=100016934860213" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/r__9281/?hl=zh-tw" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/GuanYuC9281/benno1.github.io.git" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:cben2400@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</section>
+
+<footer style="text-align: center; padding: 20px;">
+  <p id="visit-counter">瀏覽次數: 0</p>
+  <p>© 2025 GuanYuC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
