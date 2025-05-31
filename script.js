@@ -269,19 +269,30 @@ document.addEventListener("DOMContentLoaded", () => {
 /*===漢堡選單=== */
 // 🔹 頁面載入後執行
 document.addEventListener("DOMContentLoaded", function () {
-  // ⏺ 取得漢堡按鈕與選單元素
   const menuToggle = document.getElementById("menu-toggle");
   const navbar = document.querySelector(".navbar ul");
 
-  // ⏺ 點擊按鈕切換選單開關
-  if (menuToggle && navbar) {
-    menuToggle.addEventListener("click", function () {
-      navbar.classList.toggle("show");
-    });
-  }
+  // 點擊漢堡按鈕時切換選單
+  menuToggle.addEventListener("click", function (e) {
+    e.stopPropagation(); // 阻止事件冒泡
+    navbar.classList.toggle("show");
+  });
 
-  // ✅ 以下可加你原本的翻譯功能、scroll動畫功能等
+  // 點擊任何導覽連結時自動收起選單
+  document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("click", function () {
+      navbar.classList.remove("show");
+    });
+  });
+
+  // 點擊視窗其他地方時關閉選單
+  document.addEventListener("click", function (e) {
+    if (!navbar.contains(e.target) && e.target !== menuToggle) {
+      navbar.classList.remove("show");
+    }
+  });
 });
+
 
 /*========== 所有頁面淡入淡出效果 ========== */
 document.addEventListener("DOMContentLoaded", function () {
