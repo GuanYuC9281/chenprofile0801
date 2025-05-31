@@ -514,10 +514,6 @@ a {
   gap: 30px;
 }
 
-.future-timeline .timeline-item:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
 .future-timeline .timeline-image img {
   width: 220px;
   height: 220px;
