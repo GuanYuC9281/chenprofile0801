@@ -265,3 +265,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   items.forEach(item => observer.observe(item));
 });
+
+/*===漢堡選單=== */
+// 🔹 頁面載入後執行
+document.addEventListener("DOMContentLoaded", function () {
+  // ⏺ 取得漢堡按鈕與選單元素
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbar = document.querySelector(".navbar ul");
+
+  // ⏺ 點擊按鈕切換選單開關
+  if (menuToggle && navbar) {
+    menuToggle.addEventListener("click", function () {
+      navbar.classList.toggle("show");
+    });
+  }
+
+  // ✅ 以下可加你原本的翻譯功能、scroll動畫功能等
+});
+
+/*========== 所有頁面淡入淡出效果 ========== */
+document.addEventListener("DOMContentLoaded", function () {
+  const faders = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  faders.forEach(section => observer.observe(section));
+});

@@ -96,8 +96,10 @@ a {
   padding: 100px 20px;
   background: linear-gradient(to bottom right, #fdfaf5, #f6f6f6);
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; ⛔ 把這行拿掉或改成 overflow: visible */
+  overflow: visible; /* ✅ 讓內容能夠正常顯示 */
 }
+
 
 .hero::before {
   content: "";
@@ -496,6 +498,73 @@ a {
     margin-top: 20px;
   }
 }
+/* ========== 未來展望 ========== */
+.future-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  border-left: 3px solid #ccc;
+}
+
+.future-timeline .timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  gap: 30px;
+}
+
+.future-timeline .timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.future-timeline .timeline-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* 內容卡片 */
+.future-timeline .timeline-content {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex: 1;
+}
+
+.future-timeline .timeline-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.future-timeline .timeline-content p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 響應式調整（手機版） */
+@media (max-width: 768px) {
+  .future-timeline {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .future-timeline .timeline-item {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .future-timeline .timeline-content {
+    width: 100%;
+  }
+}
+
 /* ========== 首頁背景========== */
 .hero {
   height: 800px; /* 調整高度以適應背景圖片 */
@@ -535,4 +604,102 @@ a {
   80%  { background-image: url('images/bg5.jpg'); }
   100% { background-image: url('images/bg1.jpg'); }
 }
-/* ========== 下滑 ========== */
+
+/* ========== 漢堡選單 ========== */
+.site-header {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.language-dropdown select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* 漢堡按鈕 */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* 手機版收合選單 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/*========== 所有頁面淡入淡出效果 ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Footer ========== */
+.social-media {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 32px;  /* ✅ 圖案大小調整 */
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #0077cc;  /* ✅ 滑過時變色 */
+  transform: scale(1.2);  /* ✅ 放大動畫 */
+}
