@@ -512,6 +512,7 @@ a {
   align-items: center;
   margin-bottom: 50px;
   gap: 30px;
+  flex-direction: row; /* 全部統一為圖片左、文字右 */
 }
 
 .future-timeline .timeline-image img {
@@ -699,3 +700,53 @@ a {
   color: #0077cc;  /* ✅ 滑過時變色 */
   transform: scale(1.2);  /* ✅ 放大動畫 */
 }
+
+/* ==固定漢堡== */
+@media (max-width: 768px) {
+  /* 固定語言欄、漢堡按鈕與導覽列在最上方 */
+  .language-bar, .menu-toggle, .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
+
+  .language-bar {
+    left: 0;
+    padding: 10px 20px;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .menu-toggle {
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+  }
+
+  .navbar {
+    top: 60px; /* 語言欄高度預留 */
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+
+  .navbar ul.show {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+/* ==========  ========== */
