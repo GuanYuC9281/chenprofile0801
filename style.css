@@ -703,72 +703,58 @@ a {
 
 /* ==固定漢堡== */
 @media (max-width: 768px) {
-  /* 固定頂部元素 */
-  .language-bar,
-  .menu-toggle {
+  /* 語言欄 + 漢堡按鈕整體固定 */
+  .language-bar {
     position: fixed;
     top: 0;
-    z-index: 999;
-    background-color: #fff;
+    left: 0;
     width: 100%;
-  }
-
-  .language-bar {
+    z-index: 999;
+    padding: 10px 20px;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
 
   .menu-toggle {
-    right: 20px;
-    top: 10px;
-    position: absolute;
+    font-size: 28px;
     background: none;
     border: none;
-    font-size: 28px;
     cursor: pointer;
   }
 
   .navbar {
     position: fixed;
-    top: 60px; /* 預留語言欄的高度 */
+    top: 60px; /* ⚠️ 要預留 language-bar 高度 */
     left: 0;
     right: 0;
-    display: none;
     background: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
     z-index: 998;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
   .navbar.show {
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .navbar ul li {
-    text-align: center;
     padding: 12px 0;
-  }
-
-  .navbar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
+    text-align: center;
   }
 }
-
-
 
 /* ==========  ========== */
