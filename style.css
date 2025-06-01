@@ -717,13 +717,13 @@ a {
     z-index: 999;
     padding: 10px 16px;
     display: flex;
+    justify-content: space-between; /* 左右排列 */
     align-items: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
 
   .language-dropdown {
     flex: 1;
-    order: 2; /* 將語言下拉選單移到右側 */
   }
 
   .menu-toggle {
@@ -732,17 +732,15 @@ a {
     border: none;
     cursor: pointer;
     color: #333;
-    order: 1; /* 將漢堡選單移到左側 */
-    margin-right: 16px; /* 可選：與語言下拉選單保持適當間距 */
   }
 
   .navbar {
     position: fixed;
-    top: 60px;
+    top: 60px; /* 固定在語言列下方 */
     left: 0;
     right: 0;
     background: #fff;
-    display: none;
+    display: none; /* 默認隱藏 */
     flex-direction: column;
     align-items: center;
     z-index: 998;
@@ -750,7 +748,7 @@ a {
   }
 
   .navbar.show {
-    display: flex;
+    display: flex; /* 點擊漢堡選單後顯示 */
   }
 
   .navbar ul {
