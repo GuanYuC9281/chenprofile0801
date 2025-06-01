@@ -703,10 +703,6 @@ a {
 
 /* ==固定漢堡== */
 @media (max-width: 768px) {
-  body {
-    padding-top: 60px; /* 預留語言列空間，避免內容被遮住 */
-  }
-
   .language-bar {
     position: fixed;
     top: 0;
@@ -715,10 +711,10 @@ a {
     height: 60px;
     padding: 10px 16px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    z-index: 999;
+    justify-content: space-between; /* ← 讓 Language 在左、漢堡在右 */
     background-color: #fff;
+    z-index: 999;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
 
@@ -732,7 +728,10 @@ a {
     border: none;
     cursor: pointer;
     color: #333;
-    z-index: 1000;
+  }
+
+  body {
+    padding-top: 60px; /* 預留高度，避免被語言列遮住 */
   }
 
   .navbar {
@@ -745,7 +744,7 @@ a {
     flex-direction: column;
     align-items: center;
     z-index: 998;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
   .navbar.show {
@@ -753,11 +752,11 @@ a {
   }
 
   .navbar ul {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin: 0;
     padding: 0;
+    margin: 0;
     list-style: none;
   }
 
