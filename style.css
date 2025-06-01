@@ -703,6 +703,7 @@ a {
 
 /* ==固定漢堡== */
 @media (max-width: 768px) {
+  /* 固定語言欄、漢堡按鈕與導覽列在最上方 */
   .language-bar, .menu-toggle, .navbar {
     position: fixed;
     top: 0;
@@ -728,10 +729,11 @@ a {
     cursor: pointer;
     position: absolute;
     top: 10px;
+    z-index: 1000;
   }
 
   .navbar {
-    top: 60px; /* 預留語言欄 */
+    top: 60px; /* 預留語言欄高度 */
     left: 0;
     right: 0;
     background: #fff;
@@ -744,9 +746,26 @@ a {
 
   .navbar.show {
     display: flex !important;
+  }
+
+  .navbar ul {
+    display: none; /* 預設隱藏 */
     flex-direction: column;
     gap: 12px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar.show ul {
+    display: flex;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    padding: 10px 0;
   }
 }
+
 
 /* ==========  ========== */
