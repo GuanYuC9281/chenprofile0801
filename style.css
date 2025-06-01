@@ -703,35 +703,41 @@ a {
 
 /* ==固定漢堡== */
 @media (max-width: 768px) {
-  /* ⛳固定整條語言欄與漢堡在最上方 */
+  body {
+    padding-top: 60px; /* 預留語言列空間，避免內容被遮住 */
+  }
+
   .language-bar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
-    width: 100%;
-    background-color: #fff;
+    height: 60px;
     padding: 10px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 999;
+    background-color: #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
 
-  /* ☰ 漢堡按鈕對齊右邊 */
+  .language-dropdown {
+    flex: 1;
+  }
+
   .menu-toggle {
     font-size: 26px;
     background: none;
     border: none;
     cursor: pointer;
     color: #333;
+    z-index: 1000;
   }
 
-  /* ⛳導覽列：展開在 language-bar 下方 */
   .navbar {
     position: fixed;
-    top: 60px; /* 跟 language-bar 高度一致 */
+    top: 60px;
     left: 0;
     right: 0;
     background: #fff;
@@ -747,19 +753,18 @@ a {
   }
 
   .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .navbar ul li {
-    text-align: center;
     padding: 12px 0;
+    text-align: center;
     border-top: 1px solid #eee;
   }
 }
-
 /* ==========  ========== */
