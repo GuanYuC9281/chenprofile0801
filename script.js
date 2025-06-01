@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // 🔹 頁面載入後執行
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
-  const navbar = document.querySelector(".navbar ");
+  const navbar = document.querySelector(".navbar");
 
   // 點擊漢堡按鈕時切換選單
   menuToggle.addEventListener("click", function (e) {
