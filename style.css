@@ -703,31 +703,35 @@ a {
 
 /* ==固定漢堡== */
 @media (max-width: 768px) {
-  /* 語言欄 + 漢堡按鈕整體固定 */
+  /* ⛳固定整條語言欄與漢堡在最上方 */
   .language-bar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     z-index: 999;
-    padding: 10px 20px;
+    width: 100%;
     background-color: #fff;
+    padding: 10px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
 
+  /* ☰ 漢堡按鈕對齊右邊 */
   .menu-toggle {
-    font-size: 28px;
+    font-size: 26px;
     background: none;
     border: none;
     cursor: pointer;
+    color: #333;
   }
 
+  /* ⛳導覽列：展開在 language-bar 下方 */
   .navbar {
     position: fixed;
-    top: 60px; /* ⚠️ 要預留 language-bar 高度 */
+    top: 60px; /* 跟 language-bar 高度一致 */
     left: 0;
     right: 0;
     background: #fff;
@@ -735,7 +739,7 @@ a {
     flex-direction: column;
     align-items: center;
     z-index: 998;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   }
 
   .navbar.show {
@@ -743,17 +747,18 @@ a {
   }
 
   .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
 
   .navbar ul li {
-    padding: 12px 0;
     text-align: center;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
   }
 }
 
