@@ -703,69 +703,72 @@ a {
 
 /* ==固定漢堡== */
 @media (max-width: 768px) {
-  /* 固定語言欄、漢堡按鈕與導覽列在最上方 */
-  .language-bar, .menu-toggle, .navbar {
+  /* 固定頂部元素 */
+  .language-bar,
+  .menu-toggle {
     position: fixed;
     top: 0;
     z-index: 999;
+    background-color: #fff;
+    width: 100%;
   }
 
   .language-bar {
-    left: 0;
-    padding: 10px 20px;
-    background-color: #fff;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
 
   .menu-toggle {
     right: 20px;
+    top: 10px;
+    position: absolute;
     background: none;
     border: none;
     font-size: 28px;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    z-index: 1000;
   }
 
   .navbar {
-    top: 60px; /* 預留語言欄高度 */
+    position: fixed;
+    top: 60px; /* 預留語言欄的高度 */
     left: 0;
     right: 0;
-    background: #fff;
     display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background: #fff;
+    z-index: 998;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
   .navbar.show {
-    display: flex !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .navbar ul {
-    display: none; /* 預設隱藏 */
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    list-style: none;
     padding: 0;
     margin: 0;
-  }
-
-  .navbar.show ul {
+    width: 100%;
     display: flex;
+    flex-direction: column;
   }
 
   .navbar ul li {
     text-align: center;
-    padding: 10px 0;
+    padding: 12px 0;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
   }
 }
+
 
 
 /* ==========  ========== */
