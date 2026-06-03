@@ -381,3 +381,26 @@ body.menu-open { overflow: hidden; }
     right: auto;
   }
 }
+
+/* Desktop language dropdown contrast fix */
+.language-dropdown select,
+.language-dropdown select:hover,
+.language-dropdown select:focus,
+.language-dropdown select:focus-visible,
+.language-dropdown select:active {
+  color: var(--text);
+  background-color: rgba(7, 11, 22, 0.96);
+  border-color: rgba(114, 242, 255, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 10px 28px rgba(0,0,0,.24);
+}
+
+.language-dropdown select option {
+  color: #eef4ff;
+  background-color: #0b1020;
+}
+
+.language-dropdown select option:checked,
+.language-dropdown select option:hover {
+  color: #06101c;
+  background-color: #72f2ff;
+}
